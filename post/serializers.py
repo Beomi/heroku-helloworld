@@ -16,7 +16,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    comment_set = CommentSerializer(many=True)
+    comment_set = CommentSerializer(many=True, read_only=True)
     user = serializers.SlugRelatedField(read_only=True, slug_field='username')
 
     class Meta:
