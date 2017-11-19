@@ -1,4 +1,7 @@
+from django.contrib.auth import get_user_model
 from django.db import models
+
+User = get_user_model()
 
 
 class TimeStampedModel(models.Model):
@@ -10,6 +13,7 @@ class TimeStampedModel(models.Model):
 
 
 class Post(TimeStampedModel):
+    user = models.ForeignKey(User)
     category = models.ForeignKey('Category')
     title = models.CharField(max_length=200)
     content = models.TextField()
@@ -19,6 +23,7 @@ class Post(TimeStampedModel):
 
 
 class Comment(TimeStampedModel):
+    user = models.ForeignKey(User)
     post = models.ForeignKey('Post')
     content = models.TextField()
 
@@ -26,7 +31,8 @@ class Comment(TimeStampedModel):
         return self.post.title + ': ' + self.content
 
 
-class Category(TimeStampedModel):
+class Category(models.Model):
+    is_active = models.BooleanField(default=True)
     name = models.CharField(max_length=200)
 
     def __str__(self):
