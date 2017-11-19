@@ -4,6 +4,8 @@ from .models import Post, Comment, Category
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    user = serializers.SlugRelatedField(read_only=True, slug_field='username')
+
     class Meta:
         model = Comment
         fields = '__all__'
