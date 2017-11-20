@@ -25,7 +25,7 @@ SECRET_KEY = "f$r-#bt_-%9bkpmdb9f89@2%blw!i1=vea#x9=r!9f&p9$-1@#"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if os.environ.get('DEBUG'):
+if os.environ.get('DEBUG') == 'False':
     DEBUG = False
 
 # Application definition
