@@ -26,7 +26,7 @@ class Image(TimeStampedModel):
     image = models.ImageField()
 
     def __str__(self):
-        return self.image
+        return self.image.file.name
 
 
 class Comment(TimeStampedModel):
