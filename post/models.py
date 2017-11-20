@@ -11,7 +11,6 @@ class TimeStampedModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-
 class Post(TimeStampedModel):
     user = models.ForeignKey(User)
     category = models.ForeignKey('Category')
@@ -20,6 +19,14 @@ class Post(TimeStampedModel):
 
     def __str__(self):
         return self.title
+
+
+class Image(TimeStampedModel):
+    post = models.ForeignKey('Post')
+    image = models.ImageField()
+
+    def __str__(self):
+        return self.image
 
 
 class Comment(TimeStampedModel):
