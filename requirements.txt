@@ -2,7 +2,7 @@ certifi==2017.11.5
 chardet==3.0.4
 dj-database-url==0.4.1
 Django==1.11.7
-django-storages==1.6.5
+-e git+https://github.com/jschneier/django-storages.git@adefe324be22843148b03a2068d2922eaae1a48b#egg=django_storages
 djangorestframework==3.7.3
 dropbox==8.5.0
 gunicorn==19.6.0
