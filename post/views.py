@@ -6,7 +6,6 @@ from .serializers import PostSerializer, CommentSerializer, CategorySerializer
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all() \
-        .select_related('category') \
         .prefetch_related('comment_set')
     serializer_class = PostSerializer
 

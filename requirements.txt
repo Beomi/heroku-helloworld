@@ -1,16 +1,16 @@
 certifi==2017.11.5
 chardet==3.0.4
 dj-database-url==0.4.1
-Django==1.11.7
+Django==2.0.3
 -e git+https://github.com/jschneier/django-storages.git@adefe324be22843148b03a2068d2922eaae1a48b#egg=django_storages
-djangorestframework==3.7.3
+djangorestframework==3.7.7
 dropbox==8.5.0
 gunicorn==19.6.0
 idna==2.6
 olefile==0.44
 Pillow==4.3.0
 psycopg2==2.7.3.2
-pytz==2017.3
+pytz==2018.3
 requests==2.18.4
 six==1.11.0
 urllib3==1.22
