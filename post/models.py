@@ -11,9 +11,10 @@ class TimeStampedModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+
 class Post(TimeStampedModel):
-    user = models.ForeignKey(User)
-    category = models.ForeignKey('Category')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     content = models.TextField()
 
@@ -22,7 +23,7 @@ class Post(TimeStampedModel):
 
 
 class Image(TimeStampedModel):
-    post = models.ForeignKey('Post')
+    post = models.ForeignKey('Post', on_delete=models.CASCADE)
     image = models.ImageField()
 
     def __str__(self):
@@ -30,8 +31,8 @@ class Image(TimeStampedModel):
 
 
 class Comment(TimeStampedModel):
-    user = models.ForeignKey(User)
-    post = models.ForeignKey('Post')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey('Post', on_delete=models.CASCADE)
     content = models.TextField()
 
     def __str__(self):
