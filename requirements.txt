@@ -3,7 +3,7 @@ chardet==3.0.4
 dj-database-url==0.4.1
 Django==2.0.3
 -e git+https://github.com/jschneier/django-storages.git@adefe324be22843148b03a2068d2922eaae1a48b#egg=django_storages
-djangorestframework==3.7.7
+djangorestframework==3.11.2
 dropbox==8.5.0
 gunicorn==19.6.0
 idna==2.6
